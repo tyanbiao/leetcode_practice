@@ -18,4 +18,17 @@ public class Tool {
     public static Integer[] intsToIntegers(int[] arr) {
         return Arrays.stream(arr).boxed().toArray(Integer[]::new);
     }
+
+    public static String linkListToString(ListNode node) {
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        while (node != null) {
+            sb.append(node.val);
+            sb.append(',');
+            node = node.next;
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        sb.append(']');
+        return sb.toString();
+    }
 }
